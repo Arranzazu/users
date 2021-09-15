@@ -1,0 +1,21 @@
+include includes/header.pug
+
+
+div.container
+  div.row.my-4
+    div.col-md-6.offset-md-3
+      form(action="/pages/create", method="post") 
+        .mb-3.text-center
+          p.fs-2 Alta de Nuevo Usuario
+          //- alerta de usuario ya registrado
+          <p style="color: red;">#{errorMessage}</p> 
+        .mb-3
+          input.form-control(type="email" placeholder="Email" name="email" id="email" required)
+        .mb-3
+          input.form-control(type="password" placeholder="Password" name="password" id="password" required)
+        .mb-3
+          input.form-control(type="password" placeholder="Repita el password" name="password2" id="password2")
+        .d-grid.gap-2
+          button.btn.btn-primary(type="submit") Enviar
+
+        a(href="/pages/sign-in") Logarse

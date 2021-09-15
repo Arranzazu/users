@@ -1,0 +1,18 @@
+include includes/header.pug
+
+div.container
+  div.row.my-4
+    div.col-md-6.offset-md-3
+      form(action="/pages/login", method="post") 
+        .mb-3.text-center
+          p.fs-2 Logarse
+          p(style="color:red;")= errorMessage
+
+        .mb-3
+          input.form-control(type="email" placeholder="Email" name="email" id="email" required)
+        .mb-3
+          input.form-control(type="password" placeholder="Password" name="password" id="password" required)
+        .d-grid.gap-2
+          button.btn.btn-primary(type="submit") Enviar
+        .my-4.text-center
+          a(href="/pages/sign-up") Alta Nuevo Usuario

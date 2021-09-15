@@ -1,0 +1,29 @@
+include includes/header.pug
+<p> USERLIST</p> 
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-4">
+      p.mt-4 Usuario conectado: #{user.email} 
+      p Usuario tipo=> #{userType}
+      if userType == 0 
+              <a href="/pages/sign-in">Sign In</a>
+      else if userType == 1 
+        <a href="/pages/logout">Logout</a>
+      else if userType == 2 
+               <a href="/pages/logout">Logout</a>
+
+                  <p> Aqui listado usuarios</p>
+                  .col-3
+                        .card
+                            .card-body
+                                .row
+                                    .col.col-md-10
+                                        p.card-title= user.email
+                                    .col.col-md-2
+                                        button.btn.btn-danger(onclick="") X
+      
+
+    </div>
+  </div>
+
+  //- p userType=> #{userType}
